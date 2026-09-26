@@ -180,8 +180,43 @@
   .aktualnosc{
     padding:20px 0;
     border-top:1px solid var(--line);
+    cursor:pointer;
   }
   .aktualnosc:first-child{border-top:none;}
+  .a-more{
+    display:inline-block;
+    margin-top:10px;
+    font-size:14px;
+    color:var(--indigo);
+  }
+  .aktualnosc:hover .a-more{text-decoration:underline;}
+  #aktualnosci-article{display:none;}
+  #aktualnosci-article.active{display:block;}
+  .article-back{
+    display:inline-block;
+    margin-bottom:24px;
+    font-size:14px;
+    font-family:"Space Grotesk", Arial, sans-serif;
+    font-weight:700;
+    color:var(--indigo);
+    background:none;
+    border:none;
+    padding:0;
+    cursor:pointer;
+  }
+  .article-back:hover{text-decoration:underline;}
+  #aktualnosci-article h3{
+    font-family:"Space Grotesk", Arial, sans-serif;
+    font-size:24px;
+    font-weight:700;
+    margin:8px 0 20px;
+  }
+  #aktualnosci-article p{
+    font-size:16.5px;
+    color:#3c4038;
+    max-width:60ch;
+    margin:0 0 16px;
+  }
   .a-date{
     display:block;
     font-size:13px;
@@ -210,6 +245,54 @@
   }
   .aktualnosci-empty{color:#6b6f63; font-size:15px;}
 
+  /* --- KONTAKT --- */
+  #kontakt form{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    max-width:460px;
+  }
+  #kontakt label{
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+    font-family:"Space Grotesk", Arial, sans-serif;
+    font-size:13px;
+    font-weight:700;
+    color:var(--ink);
+  }
+  #kontakt input,
+  #kontakt textarea{
+    font-family:"Source Serif 4", Georgia, serif;
+    font-size:16px;
+    padding:10px 12px;
+    border:2px solid var(--ink);
+    background:#fff;
+    color:var(--ink);
+    resize:vertical;
+  }
+  #kontakt input:focus,
+  #kontakt textarea:focus{
+    outline:2px solid var(--indigo);
+    outline-offset:1px;
+  }
+  #kontakt button{
+    align-self:flex-start;
+    font-family:"Space Grotesk", Arial, sans-serif;
+    font-weight:700;
+    font-size:15px;
+    padding:12px 28px;
+    background:var(--indigo);
+    color:#fff;
+    border:none;
+    cursor:pointer;
+  }
+  #kontakt button:hover{background:#28397a;}
+  #kontakt button:disabled{opacity:0.6; cursor:default;}
+  .contact-status{margin-top:16px; font-size:15px;}
+  .contact-status.ok{color:var(--green);}
+  .contact-status.err{color:#b23b3b;}
+
   footer{
     padding:40px 0 72px;
     font-size:14px;
@@ -227,7 +310,7 @@
     <header>
       <div class="brand">PROGRAM WYBORCZY — SAMORZĄD SZKOLNY</div>
       <h1>Krzysztof Szwed</h1>
-      <p>Pięć konkretów na</p>
+      <p>Pięć konkretów na 160 dni rządu.</p>
 
       <div class="countdown" id="countdown" style="margin-top:16px;">
         <div class="countdown-box"><span class="countdown-num" id="cd-days">--</span><span class="countdown-label">dni</span></div>
@@ -235,7 +318,7 @@
         <div class="countdown-box"><span class="countdown-num" id="cd-mins">--</span><span class="countdown-label">min</span></div>
         <div class="countdown-box"><span class="countdown-num" id="cd-secs">--</span><span class="countdown-label">sek</span></div>
       </div>
-      <p class="countdown-target">rządu.</p>
+      <p class="countdown-target">do końca kadencji — piątek, 25 czerwca 2027</p>
 
       <div class="tabs">
         <button class="tab-btn active" data-tab="program">Program</button>
@@ -290,6 +373,7 @@
       <div id="aktualnosci-list">
         <p class="aktualnosci-empty">Wczytywanie…</p>
       </div>
+      <div id="aktualnosci-article"></div>
     </section>
 
     <section>
@@ -297,6 +381,24 @@
       <div class="paper-note">
         <p>Ten program wyborczy jest online zamiast na papierowych ulotkach — dzięki temu nie marnujemy papieru na coś, co i tak najszybciej trafia do kosza.</p>
       </div>
+    </section>
+
+    <section id="kontakt">
+      <h2>KONTAKT</h2>
+      <p style="font-size:16.5px; color:#3c4038; margin:0 0 24px; max-width:56ch;">Masz pytanie, pomysł albo uwagę do programu? Napisz — odpowiem osobiście.</p>
+      <form id="contact-form" action="https://formspree.io/f/TWOJ_ID_FORMSPREE" method="POST">
+        <label>Imię i nazwisko
+          <input type="text" name="name" placeholder="opcjonalnie">
+        </label>
+        <label>E-mail
+          <input type="email" name="email" required placeholder="żebym mógł/mogła odpowiedzieć">
+        </label>
+        <label>Wiadomość
+          <textarea name="message" rows="5" required placeholder="Napisz, o co chodzi…"></textarea>
+        </label>
+        <button type="submit">Wyślij</button>
+      </form>
+      <p id="contact-status" class="contact-status" style="display:none;"></p>
     </section>
 
     <footer>
@@ -325,6 +427,44 @@
     updateCountdown();
     setInterval(updateCountdown, 1000);
 
+    // === FORMULARZ KONTAKTOWY ===
+    // Wysyłka idzie przez Formspree (darmowe konto) — patrz instrukcja w rozmowie.
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const status = document.getElementById('contact-status');
+        const btn = contactForm.querySelector('button');
+        btn.disabled = true;
+        btn.textContent = 'Wysyłanie…';
+        fetch(contactForm.action, {
+          method: 'POST',
+          body: new FormData(contactForm),
+          headers: { 'Accept': 'application/json' }
+        })
+          .then(r => {
+            if (r.ok) {
+              status.textContent = 'Dziękuję! Wiadomość została wysłana.';
+              status.className = 'contact-status ok';
+              contactForm.reset();
+            } else {
+              status.textContent = 'Coś poszło nie tak — spróbuj ponownie za chwilę.';
+              status.className = 'contact-status err';
+            }
+            status.style.display = 'block';
+            btn.disabled = false;
+            btn.textContent = 'Wyślij';
+          })
+          .catch(() => {
+            status.textContent = 'Coś poszło nie tak — spróbuj ponownie za chwilę.';
+            status.className = 'contact-status err';
+            status.style.display = 'block';
+            btn.disabled = false;
+            btn.textContent = 'Wyślij';
+          });
+      });
+    }
+
     // === ZAKŁADKI ===
     function activateTab(tabName){
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === tabName));
@@ -338,44 +478,87 @@
     });
     // Jeśli adres strony kończy się np. na #aktualnosci (tak jak link zapisany
     // na chipie NFC), od razu otwórz tę zakładkę zamiast domyślnego Programu.
-    const initialTab = location.hash.replace('#', '');
+    const initialTab = location.hash.replace('#', '').split('/')[0];
     if (initialTab === 'aktualnosci' || initialTab === 'program') {
       activateTab(initialTab);
     }
 
     // === AKTUALNOŚCI ===
     // Treść wczytywana jest z pliku aktualnosci.json leżącego w tym samym
-    // folderze co ten plik index.html. Żeby dodać / zmienić wpis, edytujesz
-    // TYLKO ten plik JSON (np. bezpośrednio na GitHubie) — nic tu, w index.html,
-    // nie trzeba ruszać.
+    // folderze co ten plik index.html. Żeby dodać / zmienić wpis albo napisać
+    // pełną treść artykułu, edytujesz TYLKO ten plik JSON — nic tu, w
+    // index.html, nie trzeba ruszać.
+    let aktualnosciItems = [];
+
+    function dateHtmlFor(item){
+      return item.date
+        ? '<span class="a-date">' + new Date(item.date).toLocaleDateString('pl-PL', { day:'numeric', month:'long', year:'numeric' }) + '</span><br>'
+        : '';
+    }
+    function statusHtmlFor(item){
+      return item.status
+        ? '<span class="a-status status-' + item.status.replace(/\s+/g, '-') + '">' + item.status + '</span>'
+        : '';
+    }
+
+    function renderAktualnosciList(){
+      const list = document.getElementById('aktualnosci-list');
+      if (!aktualnosciItems.length) {
+        list.innerHTML = '<p class="aktualnosci-empty">Na razie brak wpisów.</p>';
+        return;
+      }
+      list.innerHTML = aktualnosciItems
+        .map((item, i) => {
+          return '<div class="aktualnosc" data-index="' + i + '">' +
+            dateHtmlFor(item) +
+            statusHtmlFor(item) +
+            '<h4>' + item.title + '</h4>' +
+            '<p>' + item.description + '</p>' +
+            '<span class="a-more">Czytaj całość →</span>' +
+          '</div>';
+        })
+        .join('');
+      document.querySelectorAll('.aktualnosc').forEach(el => {
+        el.addEventListener('click', () => showArticle(Number(el.dataset.index)));
+      });
+    }
+
+    function showArticle(index){
+      const item = aktualnosciItems[index];
+      if (!item) return;
+      // Pełna treść artykułu bierze się z pola "content" (lista akapitów)
+      // w aktualnosci.json. Jeśli go brak, pokazuje się po prostu "description".
+      const paragraphs = item.content && item.content.length
+        ? item.content.map(p => '<p>' + p + '</p>').join('')
+        : '<p>' + item.description + '</p>';
+      document.getElementById('aktualnosci-article').innerHTML =
+        '<button class="article-back" id="article-back-btn">← Wróć do listy</button>' +
+        dateHtmlFor(item) + statusHtmlFor(item) +
+        '<h3>' + item.title + '</h3>' +
+        paragraphs;
+      document.getElementById('article-back-btn').addEventListener('click', showList);
+      document.getElementById('aktualnosci-list').style.display = 'none';
+      document.getElementById('aktualnosci-article').classList.add('active');
+      history.replaceState(null, '', '#aktualnosci/' + index);
+    }
+
+    function showList(){
+      document.getElementById('aktualnosci-article').classList.remove('active');
+      document.getElementById('aktualnosci-list').style.display = '';
+      history.replaceState(null, '', '#aktualnosci');
+    }
+
     fetch('aktualnosci.json')
       .then(r => r.json())
       .then(items => {
-        const list = document.getElementById('aktualnosci-list');
-        if (!items.length) {
-          list.innerHTML = '<p class="aktualnosci-empty">Na razie brak wpisów.</p>';
-          return;
+        aktualnosciItems = items;
+        renderAktualnosciList();
+        // Jeśli link prowadzi wprost do konkretnego artykułu (np. #aktualnosci/2),
+        // otwórz go od razu zamiast listy.
+        const hashParts = location.hash.replace('#', '').split('/');
+        if (hashParts[0] === 'aktualnosci' && hashParts[1] !== undefined) {
+          showArticle(Number(hashParts[1]));
         }
-        list.innerHTML = items
-          .slice()
-          .sort((a, b) => (b.date || '').localeCompare(a.date || ''))
-          .map(item => {
-            // Puste pole date -> data w ogóle się nie pokazuje.
-            const dateHtml = item.date
-              ? '<span class="a-date">' + new Date(item.date).toLocaleDateString('pl-PL', { day:'numeric', month:'long', year:'numeric' }) + '</span><br>'
-              : '';
-            // Puste pole status -> etykieta statusu w ogóle się nie pokazuje.
-            const statusHtml = item.status
-              ? '<span class="a-status status-' + item.status.replace(/\s+/g, '-') + '">' + item.status + '</span>'
-              : '';
-            return '<div class="aktualnosc">' +
-              dateHtml +
-              statusHtml +
-              '<h4>' + item.title + '</h4>' +
-              '<p>' + item.description + '</p>' +
-            '</div>';
-          })
-          .join('');
       })
       .catch(() => {
         document.getElementById('aktualnosci-list').innerHTML =
