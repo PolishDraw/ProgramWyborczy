@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Program wyborczy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EFEAE0;
+    --ink:#20241F;
+    --green:#2F6F4E;
+    --gold:#D9A441;
+    --indigo:#33499A;
+    --line: rgba(32,36,31,0.15);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Source Serif 4", Georgia, serif;
+    line-height:1.6;
+  }
+  h1,h2,.brand{
+    font-family:"Space Grotesk", Arial, sans-serif;
+    letter-spacing:-0.01em;
+  }
+  .wrap{
+    max-width:720px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+  header{
+    padding:72px 0 48px;
+    border-bottom:2px solid var(--ink);
+  }
+  .brand{
+    font-size:15px;
+    font-weight:700;
+    color:var(--green);
+    margin-bottom:28px;
+  }
+  h1{
+    font-size:clamp(32px,6vw,52px);
+    font-weight:700;
+    line-height:1.08;
+    margin:0 0 20px;
+  }
+  header p{
+    font-size:19px;
+    max-width:52ch;
+    color:#3c4038;
+  }
+  section{
+    padding:56px 0;
+    border-bottom:1px solid var(--line);
+  }
+  section:last-of-type{border-bottom:none;}
+  h2{
+    font-size:14px;
+    font-weight:700;
+    color:var(--indigo);
+    margin:0 0 32px;
+  }
+  .point{
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:20px;
+    padding:24px 0;
+    border-top:1px solid var(--line);
+  }
+  .point:first-of-type{border-top:none;}
+  .mark{
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    margin-top:9px;
+  }
+  .point h3{
+    font-family:"Space Grotesk", Arial, sans-serif;
+    font-size:20px;
+    font-weight:700;
+    margin:0 0 8px;
+  }
+  .point p{
+    margin:0;
+    font-size:16.5px;
+    color:#3c4038;
+    max-width:56ch;
+  }
+  .point a{
+    color:var(--indigo);
+    text-decoration-color:rgba(51,73,154,0.35);
+  }
+  .point a:hover{
+    text-decoration-color:var(--indigo);
+  }
+  .c-green{background:var(--green);}
+  .c-gold{background:var(--gold);}
+  .c-indigo{background:var(--indigo);}
+
+  .paper-note{
+    background:#fff;
+    border:2px solid var(--ink);
+    padding:28px;
+    margin-top:8px;
+  }
+  .paper-note p{margin:0 0 12px; font-size:16.5px;}
+  .paper-note p:last-child{margin-bottom:0;}
+
+  footer{
+    padding:40px 0 72px;
+    font-size:14px;
+    color:#6b6f63;
+  }
+  @media (max-width:480px){
+    header{padding:48px 0 36px;}
+    .point{grid-template-columns:auto 1fr;}
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">PROGRAM WYBORCZY — SAMORZĄD SZKOLNY</div>
+      <h1>[Twoje imię i nazwisko]</h1>
+      <p>Cztery konkretne rzeczy, które chcę zrobić w tej kadencji — i które już wiem, jak zacząć realizować.</p>
+    </header>
+
+    <section>
+      <h2>PROGRAM</h2>
+
+      <div class="point">
+        <span class="mark c-indigo"></span>
+        <div>
+          <h3>Wymiana uczniowska w ramach Erasmusa</h3>
+          <p>Zorganizuję wymianę uczniowską w ramach programu Erasmus+ — od strony formalnej (zgłoszenie szkoły, partnerska placówka za granicą) po samą organizację wyjazdu i przyjęcia gości. <a href="https://erasmus-plus.ec.europa.eu/pl" target="_blank" rel="noopener">Oficjalna strona Erasmus+ dla szkół →</a></p>
+        </div>
+      </div>
+
+      <div class="point">
+        <span class="mark c-gold"></span>
+        <div>
+          <h3>Stypendium "Queen School" do Doliny Krzemowej</h3>
+          <p>Flagowy punkt programu: uruchomienie stypendium, które da najlepszym uczniom możliwość wyjazdu do Doliny Krzemowej — kontakt z realnym środowiskiem technologicznym, nie tylko na papierze. <a href="#stypendium">Jak to ma działać →</a></p>
+        </div>
+      </div>
+
+      <div class="point">
+        <span class="mark c-green"></span>
+        <div>
+          <h3>Reaktywacja "Spotted"</h3>
+          <p>Odzyskam konto naszego szkolnego Spotted i wznowię jego działalność — miejsce, gdzie każdy mógł coś napisać, wróci.</p>
+        </div>
+      </div>
+
+      <div class="point">
+        <span class="mark c-indigo"></span>
+        <div>
+          <h3>Zabolla wraca na Instagram</h3>
+          <p>Odzyskam konto naszej maskotki Zabolli i wznowię jej działalność, razem z kolejną edycją jej cyklicznej akcji.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="stypendium">
+      <h2>STYPENDIUM "QUEEN SCHOOL" — SZCZEGÓŁY</h2>
+      <p>Stypendium ma dawać realny wyjazd do Doliny Krzemowej, a nie tylko dyplom na papierze. Poniżej wstępny zarys — będzie doprecyzowany razem z dyrekcją i po konsultacjach z uczniami.</p>
+      <div class="point" style="border-top:none; padding-top:20px;">
+        <span class="mark c-gold"></span>
+        <div>
+          <h3>Dla kogo</h3>
+          <p>[Kryteria — np. średnia ocen, zaangażowanie w projekty techniczne/naukowe, rekomendacja nauczyciela.]</p>
+        </div>
+      </div>
+      <div class="point">
+        <span class="mark c-gold"></span>
+        <div>
+          <h3>Co obejmuje</h3>
+          <p>[Zakres wyjazdu — np. wizyty w firmach technologicznych, spotkania z ludźmi z branży, program w trakcie pobytu.]</p>
+        </div>
+      </div>
+      <div class="point">
+        <span class="mark c-gold"></span>
+        <div>
+          <h3>Jak zdobyć</h3>
+          <p>[Proces rekrutacji — np. formularz zgłoszeniowy, rozmowa kwalifikacyjna, termin ogłoszenia wyników.]</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>DLACZEGO STRONA, A NIE ULOTKI</h2>
+      <div class="paper-note">
+        <p>Ten program wyborczy jest online zamiast na papierowych ulotkach — dzięki temu nie marnujemy papieru na coś, co i tak najszybciej trafia do kosza.</p>
+      </div>
+    </section>
+
+    <footer>
+      Program wyborczy do samorządu szkolnego.
+    </footer>
+  </div>
+</body>
+</html>
