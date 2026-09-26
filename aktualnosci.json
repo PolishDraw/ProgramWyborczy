@@ -3,8 +3,8 @@
   "status": "",
   "title": "Nadchodzą wybory",
   "description": "Za niedługo odbędą się wybory do samorządu uczniowskiego.",
+   "_comment": "Poniżej wpisujesz co ma być w 1 i 2 akapicie artykułu",
   "content": [
-    //Tu wpisujesz co ma sie pojawic po przejsciu do artykulu
     "Czujecie to? W powietrzu wisi powiew świeżości, a szkolne korytarze zaraz zyskają zupełnie nową energię! Już niedługo odbędą się długo wyczekiwane wybory do Samorządu Uczniowskiego!",
     "Choć dokładną datę podamy Wam już niebawem, celujcie w początek października – to wtedy rozstrzygnie się, kto będzie reprezentował Wasze głosy przez najbliższy rok."
   ]
