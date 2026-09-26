@@ -1,0 +1,20 @@
+[
+  {
+    "date": "2026-09-20",
+    "status": "w trakcie",
+    "title": "Rozmowy z dyrekcją o Erasmusie",
+    "description": "Ustalamy z dyrekcją terminy i możliwą szkołę partnerską do wymiany."
+  },
+  {
+    "date": "2026-09-10",
+    "status": "zrobione",
+    "title": "Zgłoszenie kandydatury",
+    "description": "Formalne zgłoszenie kandydatury do samorządu zostało złożone."
+  },
+  {
+    "date": "2026-10-01",
+    "status": "planowane",
+    "title": "Spotkanie w sprawie stypendium",
+    "description": "Pierwsze spotkanie dotyczące zasad stypendium Queen Hedvig Scholarship."
+  }
+]
