@@ -8,5 +8,15 @@
       "Czujecie to? W powietrzu wisi powiew świeżości, a szkolne korytarze zaraz zyskają zupełnie nową energię! Już niedługo odbędą się długo wyczekiwane wybory do Samorządu Uczniowskiego!",
       "Choć dokładną datę podamy Wam już niebawem, celujcie w początek października – to wtedy rozstrzygnie się, kto będzie reprezentował Wasze głosy przez najbliższy rok."
     ]
+  },
+  {
+    "date": "2026-09-27",
+    "status": "",
+    "title": "Szukamy programistów",
+    "description": "Strona potrzebuje rozwoju przez programistów.",
+    "content": [
+      "Cała nasza platforma oraz cyfrowy ekosystem Samorządu są w pełni otwarte, transparentne i hostowane całkowicie za darmo na GitHubie. Nie ukrywamy kodu ani nie tworzymy zamkniętych systemów – wierzymy w projekt tworzony przez uczniów dla uczniów, który opiera się na społecznościowej współpracy i darmowych, bezpiecznych technologiach. Dzięki temu każdy może zajrzeć pod maskę projektu, sprawdzić jego działanie i mieć pewność, że wszystko stoi na najwyższym poziomie technicznym.",
+      "W związku z tym szukamy pasjonatów informatyki, programistów oraz wszystkich osób, które chcą wesprzeć nas w rozwoju tej inicjatywy! Już niedługo zostanie oficjalnie udostępnione publiczne repozytorium na GitHubie, do którego każdy chętny będzie mógł dołączyć, zgłaszać swoje pomysły, pisać kod lub pomagać przy optymalizowaniu naszej szkolnej aplikacji. Jeśli lubisz programować i chcesz mieć realny wpływ na cyfrową przyszłość szkoły, to jest Twój moment – zgłoś się do nas itwórzmy to technologiczne dzieło razem!"
+    ]
   }
 ]
