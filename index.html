@@ -34,25 +34,26 @@
     padding:0 24px;
   }
   header{
-    padding:72px 0 48px;
+    padding:40px 0 0;
     border-bottom:2px solid var(--ink);
   }
   .brand{
-    font-size:15px;
+    font-size:14px;
     font-weight:700;
     color:var(--green);
-    margin-bottom:28px;
+    margin-bottom:16px;
   }
   h1{
-    font-size:clamp(32px,6vw,52px);
+    font-size:clamp(28px,5vw,40px);
     font-weight:700;
     line-height:1.08;
-    margin:0 0 20px;
+    margin:0 0 10px;
   }
   header p{
-    font-size:19px;
+    font-size:17px;
     max-width:52ch;
     color:#3c4038;
+    margin:0 0 24px;
   }
   section{
     padding:56px 0;
@@ -122,31 +123,31 @@
   /* --- ODLICZANIE --- */
   .countdown{
     display:flex;
-    gap:16px;
-    margin-bottom:14px;
+    gap:10px;
+    margin-bottom:10px;
     flex-wrap:wrap;
   }
   .countdown-box{
     background:#fff;
     border:2px solid var(--ink);
-    padding:16px 14px;
+    padding:10px 12px;
     text-align:center;
-    min-width:68px;
+    min-width:56px;
   }
   .countdown-num{
     display:block;
     font-family:"Space Grotesk", Arial, sans-serif;
-    font-size:32px;
+    font-size:22px;
     font-weight:700;
   }
   .countdown-label{
     display:block;
-    font-size:12px;
+    font-size:11px;
     color:#6b6f63;
-    margin-top:4px;
+    margin-top:2px;
   }
   .countdown-target{
-    font-size:14px;
+    font-size:13px;
     color:#6b6f63;
     margin:0;
   }
@@ -154,8 +155,8 @@
   /* --- ZAKŁADKI --- */
   .tabs{
     display:flex;
-    gap:32px;
-    margin-top:8px;
+    gap:28px;
+    margin-top:20px;
   }
   .tab-btn{
     background:none;
@@ -164,7 +165,7 @@
     font-size:14px;
     font-weight:700;
     color:#6b6f63;
-    padding:0 0 16px;
+    padding:0 0 12px;
     cursor:pointer;
     border-bottom:2px solid transparent;
   }
@@ -228,7 +229,7 @@
       <h1>Krzysztof Szwed</h1>
       <p>Pięć konkretów na 160 dni rządu.</p>
 
-      <div class="countdown" id="countdown" style="margin-top:32px;">
+      <div class="countdown" id="countdown" style="margin-top:16px;">
         <div class="countdown-box"><span class="countdown-num" id="cd-days">--</span><span class="countdown-label">dni</span></div>
         <div class="countdown-box"><span class="countdown-num" id="cd-hours">--</span><span class="countdown-label">godz.</span></div>
         <div class="countdown-box"><span class="countdown-num" id="cd-mins">--</span><span class="countdown-label">min</span></div>
