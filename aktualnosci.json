@@ -1,14 +1,10 @@
-[
-  {
-    "date": "2026-09-26",
-    "status": "",
-    "title": "Nadchodzą wybory",
-    "description": "Za niedługo odbędą się wyboryy do samorządu uczniowskiego.",
-    "content": [
-      "Czujecie to? W powietrzu wisi powiew świeżości, a szkolne korytarze zaraz zyskają zupełnie nową energię! Już niedługo odbędą się długo wyczekiwane wybory do Samorządu Uczniowskiego! 🗳️🔥
-Choć dokładną datę podamy Wam już niebawem, celujcie w początek października – to wtedy rozstrzygnie się, kto będzie reprezentował Wasze głosy przez najbliższy rok.
-Nie zamierzamy jednak czekać z założonymi rękami. Szykujemy dla Was potężną dawkę innowacji, powrót legendarnych tradycji i akcje, o których będzie głośno w całym mieście. Od międzynarodowych szans i technologii, po powrót naszej ukochanej Zabolli, kultowego Instagrama oraz teleturnieju „1 z 10”! 🦊✨
-Bądźcie czujni, śledźcie profil, a już wkrótce zgarnijcie nasze unikalne breloki z NFC, żeby mieć cały program w kieszeni! 📱💥"
-    ]
-  },
-]
+{
+  "date": "2026-09-26",
+  "status": "",
+  "title": "Nadchodzą wybory",
+  "description": "Za niedługo odbędą się wybory do samorządu uczniowskiego.",
+  "content": [
+    "Czujecie to? W powietrzu wisi powiew świeżości, a szkolne korytarze zaraz zyskają zupełnie nową energię! Już niedługo odbędą się długo wyczekiwane wybory do Samorządu Uczniowskiego!",
+    "Choć dokładną datę podamy Wam już niebawem, celujcie w początek października – to wtedy rozstrzygnie się, kto będzie reprezentował Wasze głosy przez najbliższy rok."
+  ]
+}
