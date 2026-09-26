@@ -85,6 +85,93 @@
     font-weight:700;
     margin:0 0 8px;
   }
+  .point p{<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Program wyborczy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EFEAE0;
+    --ink:#20241F;
+    --green:#2F6F4E;
+    --gold:#D9A441;
+    --indigo:#33499A;
+    --line: rgba(32,36,31,0.15);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Source Serif 4", Georgia, serif;
+    line-height:1.6;
+  }
+  h1,h2,.brand{
+    font-family:"Space Grotesk", Arial, sans-serif;
+    letter-spacing:-0.01em;
+  }
+  .wrap{
+    max-width:720px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+  header{
+    padding:72px 0 48px;
+    border-bottom:2px solid var(--ink);
+  }
+  .brand{
+    font-size:15px;
+    font-weight:700;
+    color:var(--green);
+    margin-bottom:28px;
+  }
+  h1{
+    font-size:clamp(32px,6vw,52px);
+    font-weight:700;
+    line-height:1.08;
+    margin:0 0 20px;
+  }
+  header p{
+    font-size:19px;
+    max-width:52ch;
+    color:#3c4038;
+  }
+  section{
+    padding:56px 0;
+    border-bottom:1px solid var(--line);
+  }
+  section:last-of-type{border-bottom:none;}
+  h2{
+    font-size:14px;
+    font-weight:700;
+    color:var(--indigo);
+    margin:0 0 32px;
+  }
+  .point{
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:20px;
+    padding:24px 0;
+    border-top:1px solid var(--line);
+  }
+  .point:first-of-type{border-top:none;}
+  .mark{
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    margin-top:9px;
+  }
+  .point h3{
+    font-family:"Space Grotesk", Arial, sans-serif;
+    font-size:20px;
+    font-weight:700;
+    margin:0 0 8px;
+  }
   .point p{
     margin:0;
     font-size:16.5px;
@@ -97,6 +184,14 @@
   }
   .point a:hover{
     text-decoration-color:var(--indigo);
+  }
+  .zabolla-photo{
+    width:96px;
+    height:96px;
+    object-fit:cover;
+    border:2px solid var(--ink);
+    margin-top:14px;
+    display:block;
   }
   .c-green{background:var(--green);}
   .c-gold{background:var(--gold);}
@@ -111,6 +206,96 @@
   .paper-note p{margin:0 0 12px; font-size:16.5px;}
   .paper-note p:last-child{margin-bottom:0;}
 
+  /* --- ODLICZANIE --- */
+  .countdown{
+    display:flex;
+    gap:16px;
+    margin-bottom:14px;
+    flex-wrap:wrap;
+  }
+  .countdown-box{
+    background:#fff;
+    border:2px solid var(--ink);
+    padding:16px 14px;
+    text-align:center;
+    min-width:68px;
+  }
+  .countdown-num{
+    display:block;
+    font-family:"Space Grotesk", Arial, sans-serif;
+    font-size:32px;
+    font-weight:700;
+  }
+  .countdown-label{
+    display:block;
+    font-size:12px;
+    color:#6b6f63;
+    margin-top:4px;
+  }
+  .countdown-target{
+    font-size:14px;
+    color:#6b6f63;
+    margin:0;
+  }
+
+  /* --- ZAKŁADKI --- */
+  .tabs{
+    display:flex;
+    gap:32px;
+    margin-top:8px;
+  }
+  .tab-btn{
+    background:none;
+    border:none;
+    font-family:"Space Grotesk", Arial, sans-serif;
+    font-size:14px;
+    font-weight:700;
+    color:#6b6f63;
+    padding:0 0 16px;
+    cursor:pointer;
+    border-bottom:2px solid transparent;
+  }
+  .tab-btn.active{
+    color:var(--indigo);
+    border-bottom-color:var(--indigo);
+  }
+  .tab-panel{display:none;}
+  .tab-panel.active{display:block;}
+
+  /* --- AKTUALNOŚCI --- */
+  .aktualnosc{
+    padding:20px 0;
+    border-top:1px solid var(--line);
+  }
+  .aktualnosc:first-child{border-top:none;}
+  .a-date{
+    display:block;
+    font-size:13px;
+    color:#6b6f63;
+    margin-bottom:6px;
+  }
+  .a-status{
+    display:inline-block;
+    font-size:12px;
+    font-weight:700;
+    padding:2px 10px;
+    margin-bottom:8px;
+  }
+  .status-planowane{background:rgba(51,73,154,0.15); color:var(--indigo);}
+  .status-w-trakcie{background:rgba(217,164,65,0.3); color:#8a6415;}
+  .status-zrobione{background:rgba(47,111,78,0.2); color:var(--green);}
+  .aktualnosc h4{
+    margin:0 0 6px;
+    font-family:"Space Grotesk", Arial, sans-serif;
+    font-size:18px;
+  }
+  .aktualnosc p{
+    margin:0;
+    font-size:16px;
+    color:#3c4038;
+  }
+  .aktualnosci-empty{color:#6b6f63; font-size:15px;}
+
   footer{
     padding:40px 0 72px;
     font-size:14px;
@@ -119,6 +304,7 @@
   @media (max-width:480px){
     header{padding:48px 0 36px;}
     .point{grid-template-columns:auto 1fr;}
+    .tabs{gap:20px;}
   }
 </style>
 </head>
@@ -128,11 +314,22 @@
       <div class="brand">PROGRAM WYBORCZY — SAMORZĄD SZKOLNY</div>
       <h1>Krzysztof Szwed</h1>
       <p>Pięć konkretów na 160 dni rządu.</p>
+
+      <div class="countdown" id="countdown" style="margin-top:32px;">
+        <div class="countdown-box"><span class="countdown-num" id="cd-days">--</span><span class="countdown-label">dni</span></div>
+        <div class="countdown-box"><span class="countdown-num" id="cd-hours">--</span><span class="countdown-label">godz.</span></div>
+        <div class="countdown-box"><span class="countdown-num" id="cd-mins">--</span><span class="countdown-label">min</span></div>
+        <div class="countdown-box"><span class="countdown-num" id="cd-secs">--</span><span class="countdown-label">sek</span></div>
+      </div>
+      <p class="countdown-target">do końca kadencji — piątek, 25 czerwca 2027</p>
+
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="program">Program</button>
+        <button class="tab-btn" data-tab="aktualnosci">Aktualności</button>
+      </div>
     </header>
 
-    <section>
-      <h2>PROGRAM</h2>
-
+    <section id="tab-program" class="tab-panel active" style="border-bottom:none;">
       <div class="point">
         <span class="mark c-indigo"></span>
         <div>
@@ -162,6 +359,7 @@
         <div>
           <h3>Zabol wraca na Instagram</h3>
           <p>Odzyskam konto naszej maskotki Zabola i wznowię jej działalność.</p>
+          <img src="zabolla.jpg" alt="Zabolla" class="zabolla-photo">
         </div>
       </div>
 
@@ -171,6 +369,12 @@
           <h3>Kolejna edycja 1 z 10</h3>
           <p>Zorganizuje kolejną edycje kultowego programu 1 z 10 w naszej szkole.</p>
         </div>
+      </div>
+    </section>
+
+    <section id="tab-aktualnosci" class="tab-panel" style="border-bottom:none;">
+      <div id="aktualnosci-list">
+        <p class="aktualnosci-empty">Wczytywanie…</p>
       </div>
     </section>
 
@@ -185,5 +389,70 @@
       Program wyborczy do samorządu szkolnego.
     </footer>
   </div>
+
+  <script>
+    // === ODLICZANIE DO DATY ===
+    // Zmień tę datę, jeśli termin się zmieni. Format: 'RRRR-MM-DDTgg:mm:ss'
+    const targetDate = new Date('2027-06-25T00:00:00');
+
+    function updateCountdown(){
+      const now = new Date();
+      let diff = targetDate - now;
+      if (diff < 0) diff = 0;
+      const days = Math.floor(diff / (1000*60*60*24));
+      const hours = Math.floor((diff / (1000*60*60)) % 24);
+      const mins = Math.floor((diff / (1000*60)) % 60);
+      const secs = Math.floor((diff / 1000) % 60);
+      document.getElementById('cd-days').textContent = days;
+      document.getElementById('cd-hours').textContent = String(hours).padStart(2,'0');
+      document.getElementById('cd-mins').textContent = String(mins).padStart(2,'0');
+      document.getElementById('cd-secs').textContent = String(secs).padStart(2,'0');
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // === ZAKŁADKI ===
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+      });
+    });
+
+    // === AKTUALNOŚCI ===
+    // Treść wczytywana jest z pliku aktualnosci.json leżącego w tym samym
+    // folderze co ten plik index.html. Żeby dodać / zmienić wpis, edytujesz
+    // TYLKO ten plik JSON (np. bezpośrednio na GitHubie) — nic tu, w index.html,
+    // nie trzeba ruszać.
+    fetch('aktualnosci.json')
+      .then(r => r.json())
+      .then(items => {
+        const list = document.getElementById('aktualnosci-list');
+        if (!items.length) {
+          list.innerHTML = '<p class="aktualnosci-empty">Na razie brak wpisów.</p>';
+          return;
+        }
+        list.innerHTML = items
+          .slice()
+          .sort((a, b) => b.date.localeCompare(a.date))
+          .map(item => {
+            const statusClass = 'status-' + (item.status || 'planowane').replace(/\s+/g, '-');
+            const dateLabel = new Date(item.date).toLocaleDateString('pl-PL', { day:'numeric', month:'long', year:'numeric' });
+            return '<div class="aktualnosc">' +
+              '<span class="a-date">' + dateLabel + '</span><br>' +
+              '<span class="a-status ' + statusClass + '">' + item.status + '</span>' +
+              '<h4>' + item.title + '</h4>' +
+              '<p>' + item.description + '</p>' +
+            '</div>';
+          })
+          .join('');
+      })
+      .catch(() => {
+        document.getElementById('aktualnosci-list').innerHTML =
+          '<p class="aktualnosci-empty">Nie udało się wczytać aktualności (plik aktualnosci.json musi leżeć obok index.html).</p>';
+      });
+  </script>
 </body>
 </html>
