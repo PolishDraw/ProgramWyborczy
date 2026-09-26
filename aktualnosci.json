@@ -1,10 +1,12 @@
-{
-  "date": "2026-09-26",
-  "status": "",
-  "title": "Nadchodzą wybory",
-  "description": "Za niedługo odbędą się wybory do samorządu uczniowskiego.",
-  "content": [
-    "Czujecie to? W powietrzu wisi powiew świeżości, a szkolne korytarze zaraz zyskają zupełnie nową energię! Już niedługo odbędą się długo wyczekiwane wybory do Samorządu Uczniowskiego!",
-    "Choć dokładną datę podamy Wam już niebawem, celujcie w początek października – to wtedy rozstrzygnie się, kto będzie reprezentował Wasze głosy przez najbliższy rok."
-  ]
-}
+[
+  {
+    "date": "2026-09-26",
+    "status": "",
+    "title": "Nadchodzą wybory",
+    "description": "Za niedługo odbędą się wybory do samorządu uczniowskiego.",
+    "content": [
+      "Czujecie to? ...",
+      "Choć dokładną datę podamy Wam już niebawem..."
+    ]
+  }
+]
